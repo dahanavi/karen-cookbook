@@ -41,6 +41,22 @@ body{background:var(--cream);color:var(--text);font-family:'Heebo',sans-serif;mi
 /* ===== HERO ===== */
 .hero{background:linear-gradient(135deg,var(--terracotta-dark) 0%,var(--terracotta) 60%,var(--terracotta-light) 100%);padding:3rem 1.5rem 3.5rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+  .btn-back{display:flex;align-items:center;gap:6px;background:var(--warm);color:var(--text);border:1px solid var(--border)}
+.btn-back:hover{background:var(--white)}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .header-inner{height:56px}
+  .logo{font-size:18px}
+  .btn{padding:7px 14px;font-size:12px}
+  .hero{padding:2rem 1rem 2.5rem}
+  .hero h1{font-size:24px}
+  .main{padding:1.5rem 1rem}
+  .cat-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+  .recipe-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .recipe-cols{grid-template-columns:1fr}
+  .modal{padding:1.5rem;max-width:100%}
+}
 .hero-inner{max-width:900px;margin:0 auto;position:relative}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);color:#fff;line-height:1.2;margin-bottom:.5rem}
 .hero p{color:rgba(255,255,255,.8);font-size:15px;font-weight:300;margin-bottom:1.5rem}
@@ -196,9 +212,11 @@ body{background:var(--cream);color:var(--text);font-family:'Heebo',sans-serif;mi
       <span class="sep">›</span>
       <span id="bc-recipe"></span>
     </div>
+        <button class="btn btn-back btn-sm" onclick="goBackToCat()">← חזרה לקטגוריה</button>
     <div id="recipe-detail"></div>
   </div>
 </div>
+
 
 <!-- MODAL: ADD CATEGORY -->
 <div id="modal-cat" class="overlay hidden">
